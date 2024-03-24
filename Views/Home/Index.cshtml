@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TechBlogApp.Models.BlogPost>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Blog Posts</h1>
+@foreach(var blog in Model)
+{
+    <div class="blog-post">
+        <h2>@blog.Title</h2>
+        <p><strong>Author: @blog.Author</strong></p>
+        <p>@blog.Summary</p>
+    
+    <div>
+        <a asp-action="Edit" asp-route-id="@blog.Id">Edit</a> |
+        <a asp-action="Create" asp-route-id="@blog.Id">Create</a> |
+        <a asp-action="Delete" asp-route-id="@blog.Id">Delete</a>
+    </div>
+    </div>
+}
+
+
